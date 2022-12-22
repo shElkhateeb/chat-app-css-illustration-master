@@ -8,6 +8,7 @@
   --color-very-dark-desaturated-violet: hsl(271, 36%, 24%);
   --color-dark-grayish-violet: hsl(270, 7%, 64%);
   --color-light-grayish-violet: hsl(270, 20%, 96%);
+  --gap: 80px;
 }
 
 body {
@@ -16,48 +17,47 @@ body {
 }
 /* Start main */
 main {
-    width: 100%;
-    min-height: 100vh;
-    display: grid;
-    gap: 50px;
-    align-items: center;
-    justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 450px));
-    padding: 6vw;
-    padding-top: 10vw;
+  max-width: 1020px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6vw;
+  padding-top: 10vw;
+  margin-inline: auto;
 }
-    /* Start smart phone */
+/* Start smart phone */
 .smart-phone {
-    width: 280px;
-    max-width: 100%;
-    height: 500px;
-    max-height: 100%;
-    background-color: var(--color-light-grayish-violet);
-    border: solid 10px white;
-    border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
+  width: 280px;
+  max-width: 100%;
+  height: 500px;
+  background-color: var(--color-light-grayish-violet);
+  border: solid 10px white;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
 }
-    /* End smart phone */
-    /* Start description */
+/* End smart phone */
+/* Start description */
 .description {
-    max-width: 450px;
-    line-height: 1.8em;
+  max-width: 450px;
+  line-height: 1.8em;
 }
 
 h1 {
-    color: var(--color-very-dark-desaturated-violet);
-    font-size: 2.5rem;
-    font-weight: 500;
-    margin-bottom: 1em;
+  color: var(--color-very-dark-desaturated-violet);
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 1.6em;
+  margin-bottom: 1em;
 }
 
 .description p {
-    color: var(--color-dark-grayish-violet);
+  color: var(--color-dark-grayish-violet);
 }
-    /* End description */
+/* End description */
 /* End main */
 /* Start footer */
 .attribution {
@@ -68,15 +68,18 @@ h1 {
   color: hsl(228, 45%, 44%);
 }
 
-@media screen and (max-width: 1003px) {
-    .smart-phone {
-        margin-inline: auto;
-    }
+@media screen and (max-width: 895px) {
+  main {
+    flex-direction: column;
+  }
+  .smart-phone {
+    margin-bottom: var(--gap, 80px);
+  }
 
-    .description {
-        text-align: center;
-    }
-    .description p {
-        text-indent: 1em;
-    }
+  .description {
+    text-align: center;
+  }
+  .description p {
+    text-indent: 1em;
+  }
 }
