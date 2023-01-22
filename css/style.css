@@ -10,6 +10,8 @@
   --color-light-grayish-violet: hsl(270, 20%, 96%);
   --color-pale-violet: hsl(276, 100%, 81%);
   --color-moderate-violet: hsl(276, 55%, 52%);
+  --gradient-light-magenta: hsl(293, 100%, 63%);
+  --gradient-light-violet: hsl(264, 100%, 61%);
   --gap: 80px;
 }
 
@@ -42,6 +44,49 @@ main {
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
 }
+
+.chat-person {
+  background: linear-gradient(
+    to left,
+    var(--gradient-light-magenta),
+    var(--gradient-light-violet)
+  );
+  color: hsla(0, 0%, 100%, 0.9);
+  padding: 1rem;
+  padding-top: 2rem;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.chat-person > * {
+  margin: 0.2rem;
+}
+.chat-person img {
+  width: 2rem;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border: 2px solid hsla(0, 0%, 100%, 0.9);
+}
+.chat-person h2 {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.chat-person p {
+  font-weight: 400;
+  font-size: 0.6rem;
+}
+
+.push-right {
+  margin-left: auto;
+}
 /* End smart phone */
 /* Start description */
 .description {
@@ -64,28 +109,30 @@ h1 {
 /* End main */
 /* Start footer */
 .background {
-    --width: 375px;
-    width: var(--width);
-   height: 90%;
-    position: absolute;
-    z-index: -1;
+  --width: 375px;
+  width: var(--width);
+  height: 90%;
+  position: absolute;
+  z-index: -1;
 }
 
 .background.purple {
-    background: linear-gradient(var(--color-pale-violet), var(--color-moderate-violet));
-    border-bottom-left-radius: calc(var(--width) / 2);
-    border-bottom-right-radius: calc(var(--width) / 2);
-    top: 0;
-    left: -20px;
+  background: linear-gradient(
+    var(--color-pale-violet),
+    var(--color-moderate-violet)
+  );
+  border-bottom-left-radius: calc(var(--width) / 2);
+  border-bottom-right-radius: calc(var(--width) / 2);
+  top: 0;
+  left: -20px;
 }
 
-
 .background.gray {
-    background-color: var(--color-light-grayish-violet);
-    border-top-left-radius: calc(var(--width) / 2);
-    border-top-right-radius: calc(var(--width) / 2);
-    bottom: 0;
-    right: -20px;
+  background-color: var(--color-light-grayish-violet);
+  border-top-left-radius: calc(var(--width) / 2);
+  border-top-right-radius: calc(var(--width) / 2);
+  bottom: 0;
+  right: -20px;
 }
 
 .attribution {
